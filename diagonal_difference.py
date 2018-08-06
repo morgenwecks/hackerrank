@@ -8,16 +8,21 @@ import sys
 
 # Complete the diagonalDifference function below.
 def diagonalDifference(arr):
-    
+    #initial values for left and right diagonal sum
     left = 0
     right = 0
     
+    #give me positions of the rows in my matrix
     for counter, value in enumerate(arr):
         
+        #left gets added the corresponding value of my row's counter
         left += value[counter]
+        
+        #right is the reverse
         rights = value[::-1]
         right += rights[counter]
-
+        
+    #we want the absolute difference
     result = abs(left-right)
     return result
         
