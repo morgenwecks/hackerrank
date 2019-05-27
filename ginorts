@@ -1,0 +1,22 @@
+s = list(input())
+firsts = []
+middles = []
+lasts = []
+
+for el in s:
+    try:
+        int(el)
+        lasts.append(el)
+    except:
+        if el.islower():
+            firsts.append(el)
+        else: 
+            middles.append(el)
+firsts = ''.join(sorted(firsts))
+middles = ''.join(sorted(middles))
+
+evens = ''.join(sorted([n for n in lasts if int(n)%2 != 0]))
+odds = ''.join(sorted([n for n in lasts if int(n)%2 == 0]))
+
+
+print(firsts + middles + evens + odds)
